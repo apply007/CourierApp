@@ -18,15 +18,15 @@ export default function Dashboard(){
 
   return (
     <div>
-      <h2>ড্যাশবোর্ড</h2>
+      <h2>Dash Board</h2>
       {metrics && (
         <ul>
-          <li>দৈনিক বুকিং: {metrics.dailyBookings}</li>
-          <li>ফেইলড ডেলিভারি: {metrics.failedDeliveries}</li>
-          <li>COD মোট: {metrics.codAmounts}</li>
+          <li>Daily Booking: {metrics.dailyBookings}</li>
+          <li>Failed Delivery: {metrics.failedDeliveries}</li>
+          <li>COD Total: {metrics.codAmounts}</li>
         </ul>
       )}
-      <h3>সাম্প্রতিক পার্সেল</h3>
+      <h3>Current Parcel</h3>
       <table border="1" cellPadding="6">
         <thead><tr><th>Tracking</th><th>Status</th><th>Payment</th><th>COD</th></tr></thead>
         <tbody>
