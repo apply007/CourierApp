@@ -22,7 +22,7 @@ export default function TrackPage(){
 
   return (
     <div style={{ maxWidth: 720 }}>
-      <h2>ট্র্যাক পার্সেল</h2>
+      <h2>Track Parcel</h2>
       <input placeholder="Tracking Code" value={code} onChange={e=>setCode(e.target.value)} />
       <button onClick={fetchTrack}>Track</button>
       {parcel && (
