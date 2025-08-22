@@ -6,6 +6,10 @@ import TrackPage from "./pages/TrackPage.jsx";
 import BookParcel from "./pages/BookParcel.jsx";
 import Navbar from "./components/NavBar.jsx";
 import Register from "./pages/Register.jsx";
+import "./App.css";
+import Users from "./pages/Users.jsx";
+import MyParcels from "./pages/MyParcels.jsx";
+import Home from "./pages/Home.jsx";
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -29,6 +33,11 @@ const App = () => {
       <Routes>
         <Route
           path="/"
+          element={<Home />}
+          
+        />
+        <Route
+          path="/dashboard"
           element={
             token ? (
               <Dashboard onLogout={handleLogout} />
@@ -37,14 +46,7 @@ const App = () => {
             )
           }
         />
-        <Route
-          path="/login"
-          element={
-            <LoginPage
-              onLogin={handleLogin}
-            />
-          }
-        />
+        <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
 
         <Route
@@ -52,6 +54,9 @@ const App = () => {
           element={token ? <BookParcel /> : <Navigate to="/login" />}
         />
         <Route path="/track" element={<TrackPage />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/my-parcels" element={<MyParcels />} />
+
       </Routes>
     </div>
   );

@@ -8,7 +8,7 @@ export default function TrackPage(){
   const [updates,setUpdates]=useState([])
 
   const fetchTrack = async ()=>{
-    const { data } = await api.get(`/parcels/track/${code}`)
+    const { data } = await api.get(`http://localhost:4000/api/parcels/track/${code}`)
     setParcel(data)
     setUpdates(data.history || [])
     socket.emit('join-tracking', code)

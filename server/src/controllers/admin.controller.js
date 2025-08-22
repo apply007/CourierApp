@@ -53,3 +53,29 @@ export const exportReport = async (req, res) => {
   else await writeCSV(path, mapped);
   res.download(path, filename);
 };
+// Parcel Status update
+export const updateParcelStatus = async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+  const parcel = await Parcel.findById(id);
+  if (!parcel) return res.status(404).json({ message: 'Parcel not found' });
+
+  parcel.status = status;
+  parcel.history.push({ status, note: 'Status updated by admin' });
+  await parcel.save();
+
+  res.json({ parcel });
+};
+
+// Parcel Payment update
+export const updateParcelPayment = async (req, res) => {
+  const { id } = req.params;
+  const { paymentMode } = req.body;
+  const parcel = await Parcel.findById(id);
+  if (!parcel) return res.status(404).json({ message: 'Parcel not found' });
+
+  parcel.paymentMode = paymentMode;
+  await parcel.save();
+
+  res.json({ parcel });
+};

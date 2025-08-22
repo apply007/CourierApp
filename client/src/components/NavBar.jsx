@@ -22,7 +22,7 @@ const Navbar = ({ user, onLogout,token }) => {
                 <Link to="/book">Book Parcel</Link>
               </li>
               <li>
-                <Link to="/myparcels">My Parcels</Link>
+                <Link to="/my-parcels">My Parcels</Link>
               </li>
             </>
           )}

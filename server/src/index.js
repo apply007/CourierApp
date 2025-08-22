@@ -8,6 +8,7 @@ import http from 'http';
 import { Server as SocketIOServer } from 'socket.io';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.routes.js';
+import userRoutes from './routes/user.routes.js';
 import parcelRoutes from './routes/parcel.routes.js';
 import adminRoutes from './routes/admin.routes.js';
 import agentRoutes from './routes/agent.routes.js';
@@ -38,6 +39,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/parcels', parcelRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/agent', agentRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log('API running on port', PORT));

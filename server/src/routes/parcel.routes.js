@@ -6,7 +6,7 @@ const router = Router();
 
 // customer
 router.post('/', auth, permit('customer'), createParcel);
-router.get('/me', auth, permit('customer'), myParcels);
+router.get('/me', auth, permit('customer','admin'), myParcels);
 
 // public tracking
 router.get('/track/:code', trackPublic);

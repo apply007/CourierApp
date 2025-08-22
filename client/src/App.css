@@ -1,0 +1,76 @@
+.metrics{
+    list-style: none;
+display: flex;
+align-content: space-evenly;
+justify-content: space-evenly;
+
+font-size: large;
+font-weight: 400;
+
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.user-table th {
+  background: #4CAF50;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.user-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background: #f1f1f1;
+  transition: 0.3s;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #4CAF50;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
