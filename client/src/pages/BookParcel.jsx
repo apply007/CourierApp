@@ -13,7 +13,7 @@ export default function BookParcel(){
 
   return (
     <form onSubmit={submit} style={{ maxWidth: 520 }}>
-      <h2>পার্সেল বুকিং</h2>
+      <h2>Parcel Booking</h2>
       <input placeholder="Pickup Address" value={form.pickupAddress} onChange={e=>setForm({...form,pickupAddress:e.target.value})} />
       <input placeholder="Delivery Address" value={form.deliveryAddress} onChange={e=>setForm({...form,deliveryAddress:e.target.value})} />
       <div>

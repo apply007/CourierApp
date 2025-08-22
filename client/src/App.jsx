@@ -4,20 +4,15 @@ import LoginPage from './pages/LoginPage.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import TrackPage from './pages/TrackPage.jsx'
 import BookParcel from './pages/BookParcel.jsx'
+import Navbar from './components/NavBar.jsx'
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token'))
 
   return (
     <div style={{ fontFamily: 'system-ui', padding: 16 }}>
-      <nav style={{ display:'flex', gap: 12, marginBottom: 16 }}>
-        <Link to="/">Dashboard</Link>
-        <Link to="/book">Book Parcel</Link>
-        <Link to="/track">Track</Link>
-        {!token ? <Link to="/login">Login</Link> : (
-          <button onClick={()=>{ localStorage.removeItem('token'); setToken(null); location.reload(); }}>Logout</button>
-        )}
-      </nav>
+      
+   <Navbar/>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<LoginPage onLogin={(t)=>{localStorage.setItem('token',t); setToken(t)}} />} />

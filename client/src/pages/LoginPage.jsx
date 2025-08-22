@@ -21,7 +21,7 @@ export default function LoginPage({ onLogin }) {
   return (
     <form onSubmit={submit} style={{ maxWidth:360 }}>
       <h2>Login</h2>
-      <input placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} style={{ display:'block', width:'100%', margin:'8px 0' }} />
+      <input type='email' placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} style={{ display:'block', width:'100%', margin:'8px 0' }} />
       <input placeholder="Password" type="password" value={password} onChange={e=>setPassword(e.target.value)} style={{ display:'block', width:'100%', margin:'8px 0' }} />
       {err && <div style={{ color:'crimson' }}>{err}</div>}
       <button disabled={loading}>{loading ? '...' : 'Login'}</button>
