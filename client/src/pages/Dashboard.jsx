@@ -8,9 +8,9 @@ export default function Dashboard(){
   useEffect(()=>{
     (async()=>{
       try{
-        const { data: m } = await api.get('/admin/analytics')
+        const { data: m } = await api.get('http://localhost:4000/api/admin/analytics')
         setMetrics(m)
-        const { data: p } = await api.get('/admin/parcels')
+        const { data: p } = await api.get('http://localhost:4000/api/admin/parcels')
         setParcels(p)
       }catch(e){ /* ignore for non-admin */ }
     })()

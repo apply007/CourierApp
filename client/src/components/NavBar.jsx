@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
-const Navbar = ({ user, onLogout }) => {
+const Navbar = ({ user, onLogout,token }) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ const Navbar = ({ user, onLogout }) => {
               </li>
             </>
           )}
-          {user ? (
+          {token ? (
             <li>
               <span className="logout-btn" onClick={onLogout}>
                 Logout

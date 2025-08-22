@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { api } from '../lib/api'
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginPage({ onLogin }) {
   const [email,setEmail]=useState('')
@@ -7,12 +8,18 @@ export default function LoginPage({ onLogin }) {
   const [loading,setLoading]=useState(false)
   const [err,setErr]=useState('')
 
+  const navigate = useNavigate()
   const submit = async (e)=>{
     e.preventDefault()
     setLoading(true); setErr('')
+    
     try{
-      const { data } = await api.post('/auth/login', { email, password })
-      onLogin?.(data.token)
+      const  {data}  = await api.post('http://localhost:4000/api/auth/login', { email, password })
+      console.log(data)
+     // localStorage.setItem('user',data)
+       onLogin?.(data.token,data.user)
+ 
+      navigate('/')
     }catch(e){
       setErr(e?.response?.data?.message || 'Login failed')
     }finally{ setLoading(false) }
