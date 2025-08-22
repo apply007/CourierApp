@@ -42,8 +42,8 @@ const Users = () => {
           {users.length > 0 ? (
             users.map((user, index) => (
               <tr key={user.id || index}>
-                <td>{user.id}</td>
-                <td>{user.fullName}</td>
+                <td>{index+1}</td>
+                <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.role}</td>
               </tr>
