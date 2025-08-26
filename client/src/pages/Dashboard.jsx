@@ -8,9 +8,9 @@ export default function Dashboard(){
   useEffect(()=>{
     (async()=>{
       try{
-        const { data: m } = await api.get('http://localhost:4000/api/admin/analytics')
+        const { data: m } = await api.get('https://courierapp-oxx4.onrender.com/api/admin/analytics')
         setMetrics(m)
-        const { data: p } = await api.get('http://localhost:4000/api/admin/parcels')
+        const { data: p } = await api.get('https://courierapp-oxx4.onrender.com/api/admin/parcels')
         setParcels(p)
       }catch(e){ /* ignore for non-admin */ }
     })()
@@ -19,7 +19,7 @@ export default function Dashboard(){
 
 const handleStatusChange = async (id, newStatus) => {
   try {
-    const { data } = await api.patch(`http://localhost:4000/api/admin/parcels/${id}/status`, { status: newStatus });
+    const { data } = await api.patch(`https://courierapp-oxx4.onrender.com/api/admin/parcels/${id}/status`, { status: newStatus });
     setParcels(parcels.map(p => p._id === id ? data.parcel : p));
   } catch (e) {
     console.log(e);
@@ -28,7 +28,7 @@ const handleStatusChange = async (id, newStatus) => {
 
 const handlePaymentChange = async (id, newPayment) => {
   try {
-    const { data } = await api.patch(`http://localhost:4000/api/admin/parcels/${id}/payment`, { paymentMode: newPayment });
+    const { data } = await api.patch(`https://courierapp-oxx4.onrender.com/api/admin/parcels/${id}/payment`, { paymentMode: newPayment });
     setParcels(parcels.map(p => p._id === id ? data.parcel : p));
   } catch (e) {
     console.log(e);

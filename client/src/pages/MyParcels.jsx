@@ -9,7 +9,7 @@ export default function MyParcels() {
     const fetchParcels = async () => {
       try {
         const token = localStorage.getItem('token');
-        const { data } = await api.get('http://localhost:4000/api/parcels/me', {
+        const { data } = await api.get('https://courierapp-oxx4.onrender.com/api/parcels/me', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setParcels(data);

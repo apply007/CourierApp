@@ -7,7 +7,7 @@ export default function BookParcel(){
 
   const submit = async (e)=>{
     e.preventDefault()
-    const { data } = await api.post('http://localhost:4000/api/parcels', form)
+    const { data } = await api.post('https://courierapp-oxx4.onrender.com/api/parcels', form)
     setRes(data)
   }
 

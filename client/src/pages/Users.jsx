@@ -4,8 +4,8 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Mock API: ekhane tumi nijer backend er API URL use korba
-  const API_URL = "http://localhost:4000/api/users"; 
+  
+  const API_URL = "https://courierapp-oxx4.onrender.com/api/users"; 
 
   useEffect(() => {
     const fetchUsers = async () => {

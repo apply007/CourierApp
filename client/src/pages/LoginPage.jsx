@@ -14,7 +14,7 @@ export default function LoginPage({ onLogin }) {
     setLoading(true); setErr('')
     
     try{
-      const  {data}  = await api.post('http://localhost:4000/api/auth/login', { email, password })
+      const  {data}  = await api.post('https://courierapp-oxx4.onrender.com/api/auth/login', { email, password })
       console.log(data)
      // localStorage.setItem('user',data)
        onLogin?.(data.token,data.user)

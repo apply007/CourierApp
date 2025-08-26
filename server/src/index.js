@@ -31,7 +31,8 @@ initSocket(io);
 
 // Middleware
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN || "*", credentials: true }));
+ app.use(cors({ origin: process.env.CORS_ORIGIN || "*", credentials: true }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
@@ -57,12 +58,12 @@ app.use("/api/users", userRoutes);
 // ------------------
 
 // Serve static files from frontend build
-app.use(express.static(path.join(__dirname, "client", "dist")));
+// app.use(express.static(path.join(__dirname, "client", "dist")));
 
-// Catch-all: send index.html for frontend routes (except /api/*)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// // Catch-all: send index.html for frontend routes (except /api/*)
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 // ------------------
 // START SERVER
