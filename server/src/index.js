@@ -39,7 +39,7 @@ app.use(morgan("dev"));
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; connect-src 'self' https://your-backend.onrender.com"
+    "default-src 'self'; connect-src 'self' https://courierapp-oxx4.onrender.com/"
   );
   next();
 });
