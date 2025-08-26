@@ -36,6 +36,14 @@ const Navbar = ({ user, onLogout,token }) => {
               </li>
             </>
           )}
+          {user?.role === "customer" && (
+            <>
+              <li>
+                <Link to="/track">Track</Link>
+              </li>
+           
+            </>
+          )}
           {token ? (
             <li>
               <span className="logout-btn" onClick={onLogout}>
