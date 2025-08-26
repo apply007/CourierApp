@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "build":"npm install && npm install --prefix client && npm run build --prefix client"
+    "start": "node server/src/index.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -27,8 +27,17 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
-  }
+  },
+  "description": "This is a **Courier/Parcel Booking System** built with the **MERN stack (MongoDB, Express, React, Node.js)**. It includes authentication, parcel booking, user dashboard, and admin panel.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apply007/CourierApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apply007/CourierApp/issues"
+  },
+  "homepage": "https://github.com/apply007/CourierApp#readme"
 }
-
-
-
